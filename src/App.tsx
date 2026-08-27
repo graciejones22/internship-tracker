@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import AddApplicationForm from './components/AddApplicationForm';
 import type { Application } from './types/Application';
+import ApplicationCard from './components/ApplicationCard';
 
 function App() {
   const [applications, setApplications] = useState<Application[]>(() => {
@@ -25,6 +26,14 @@ function App() {
 
     setShowForm(false);
   }
+
+  function handleDeleteApplication(id: number) {
+  setApplications((currentApplications) =>
+    currentApplications.filter(
+      (application) => application.id !== id
+    )
+  );
+}
 
   return (
     <div className="app">
@@ -111,22 +120,13 @@ function App() {
           ) : (
             <div className="application-list">
               {applications.map((application) => (
-                <div
-                  className="application-card"
+                <ApplicationCard
                   key={application.id}
-                >
-                  <div>
-                    <h3>{application.position}</h3>
-                    <p>{application.company}</p>
-                    <span>{application.location}</span>
-                  </div>
-
-                  <div className="application-status">
-                    {application.status}
-                  </div>
-                </div>
-              ))}
-            </div>
+                  application={application}
+                  onDelete={handleDeleteApplication}
+                />
+          ))}
+        </div>
           )}
         </section>
       </main>

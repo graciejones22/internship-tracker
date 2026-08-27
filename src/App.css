@@ -341,3 +341,129 @@ button {
     gap: 15px;
   }
 }
+
+/* Improved Application Cards */
+
+.application-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  background: white;
+}
+
+.application-card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.application-card h3 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-size: 18px;
+}
+
+.application-position {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.application-location {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.status-badge {
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-interested {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.status-applied {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.status-interview {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-offer {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.application-details {
+  display: flex;
+  gap: 40px;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.application-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.detail-label {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.application-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.view-job-button,
+.delete-button {
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-job-button {
+  background: #4f46e5;
+  color: white;
+}
+
+.delete-button {
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .application-card-main {
+    flex-direction: column;
+  }
+
+  .application-details {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
