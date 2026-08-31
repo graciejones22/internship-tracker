@@ -26,6 +26,8 @@ function App() {
   const [filter, setFilter] = useState<ApplicationStatus | 'All'>(
     'All'
   );
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortOption, setSortOption] = useState('newest');
 
   function handleAddApplication(application: Application) {
     setApplications((currentApplications) => [
@@ -62,12 +64,34 @@ function App() {
     setShowForm(false);
   }
 
-  const filteredApplications =
-    filter === 'All'
-      ? applications
-      : applications.filter(
-          (application) => application.status === filter
-        );
+  const filteredApplications = applications
+  .filter((application) => {
+    const matchesStatus =
+      filter === 'All' || application.status === filter;
+
+    const search = searchTerm.toLowerCase();
+
+    const matchesSearch =
+      application.company.toLowerCase().includes(search) ||
+      application.position.toLowerCase().includes(search);
+
+    return matchesStatus && matchesSearch;
+  })
+  .sort((a, b) => {
+    if (sortOption === 'company') {
+      return a.company.localeCompare(b.company);
+    }
+
+    if (sortOption === 'oldest') {
+      return a.dateApplied.localeCompare(b.dateApplied);
+    }
+
+    if (sortOption === 'deadline') {
+      return a.deadline.localeCompare(b.deadline);
+    }
+
+    return b.dateApplied.localeCompare(a.dateApplied);
+  });
 
   const statusCounts = {
   Interested: applications.filter(
@@ -153,6 +177,31 @@ function App() {
             <div>
               <h2>My Applications</h2>
               <p>Your internship applications will appear here.</p>
+          </div>
+          
+          <div className="search-container">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search company or position..."
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              />
+          </div>
+
+          <div className="sort-container">
+            <label htmlFor="sort">Sort by:</label>
+
+            <select
+              id="sort"
+              value={sortOption}
+              onChange={(event) => setSortOption(event.target.value)}
+            >
+              <option value="newest">Newest Application</option>
+              <option value="oldest">Oldest Application</option>
+              <option value="company">Company Name</option>
+              <option value="deadline">Deadline</option>
+            </select>
           </div>
 
           <div className="filter-buttons">
