@@ -545,6 +545,28 @@ button {
   color: #111827;
 }
 
+/* Status Chart */
+
+.status-chart {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.status-chart h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  color: #111827;
+}
+
+.status-chart > p {
+  margin: 0 0 20px;
+  color: #6b7280;
+}
+
 @media (max-width: 900px) {
   .status-grid {
     grid-template-columns: repeat(3, 1fr);

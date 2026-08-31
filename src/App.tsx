@@ -6,6 +6,7 @@ import type {
   ApplicationStatus,
  } from './types/Application';
 import ApplicationCard from './components/ApplicationCard';
+import StatusChart from './components/StatusChart';
 
 function App() {
   const [applications, setApplications] = useState<Application[]>(() => {
@@ -145,41 +146,7 @@ function App() {
           </div>
         </section>
 
-        <section className="status-overview">
-          <div className="section-heading">
-            <div>
-              <h2>Application Overview</h2>
-              <p>See how your applications are progressing.</p>
-            </div>
-          </div>
-
-          <div className="status-grid">
-            <div className="status-overview-card">
-              <span>Interested</span>
-              <strong>{statusCounts.Interested}</strong>
-            </div>
-
-            <div className="status-overview-card">
-              <span>Applied</span>
-              <strong>{statusCounts.Applied}</strong>
-            </div>
-
-            <div className="status-overview-card">
-              <span>Interviews</span>
-              <strong>{statusCounts.Interview}</strong>
-            </div>
-
-            <div className="status-overview-card">
-              <span>Offers</span>
-              <strong>{statusCounts.Offer}</strong>
-            </div>
-
-            <div className="status-overview-card">
-              <span>Rejected</span>
-              <strong>{statusCounts.Rejected}</strong>
-            </div>
-          </div>
-        </section>
+        <StatusChart statusCounts={statusCounts} />
 
         <section className="applications-section">
           <div className="section-heading">
