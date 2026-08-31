@@ -64,7 +64,7 @@ npm run dev
 ```
 Open the local development URL provided by Vite in your browser.
 
-### How It Works
+## How It Works
 
 Applications are stored in the browser using localStorage. React state is used to manage the application data and update the dashboard whenever applications are added, edited, or deleted.
 
@@ -72,9 +72,9 @@ The application list can be dynamically filtered based on application status and
 
 The dashboard calculates application statistics from the stored application data and displays the distribution of applications by status using a bar chart.
 
-### What I Learned
+## What I Learned
 
-## Through this project, I practiced:
+### Through this project, I practiced:
 
 - Building reusable React components
 - Managing state with React hooks
@@ -88,9 +88,9 @@ The dashboard calculates application statistics from the stored application data
 - Using Git for incremental version control
 - Deploying a web application
 
-### Future Improvements
+## Future Improvements
 
-## Potential future versions could include:
+### Potential future versions could include:
 
 - A backend database
 - User authentication
@@ -102,7 +102,7 @@ The dashboard calculates application statistics from the stored application data
 
 This project was developed incrementally using Git and GitHub, with separate commits for major functionality and design improvements.
 
-## Key development milestones included:
+### Key development milestones included:
 
 - Initial dashboard and application form
 - Application cards
@@ -115,6 +115,6 @@ This project was developed incrementally using Git and GitHub, with separate com
 
 ### Author
 
-Grace Jones
-Computer Science (Software Development)
-Siena University
+- Grace Jones
+- Computer Science (Software Development)
+- Siena University
