@@ -1,32 +1,113 @@
-# React + TypeScript + Vite
+# Internship Application Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive web application for organizing and tracking internship applications throughout the recruiting process.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The Internship Application Tracker was built to make it easier to keep track of internship opportunities in one place. Users can add applications, update their status, search and filter their applications, sort them by different criteria, and monitor their overall application progress through a dashboard.
 
-## React Compiler
+The application stores data locally in the browser so that application information remains available after refreshing the page.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+- Add internship applications
+- Edit existing applications
+- Delete applications
+- Track application status
+- Search applications by company or position
+- Filter applications by status
+- Sort applications by:
+  - Newest application
+  - Oldest application
+  - Company name
+  - Deadline
+- Store job posting links
+- Dashboard statistics
+- Application status visualization
+- Persistent data using browser localStorage
+- Responsive design for desktop and mobile devices
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Technologies
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+- React
+- TypeScript
+- Vite
+- Recharts
+- CSS
+- localStorage
+- Git & GitHub
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/graciejones22/internship-tracker.git
+
+Navigate to the project directory:
+
+cd internship-tracker
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Open the local development URL provided by Vite in your browser.
+
+How It Works
+
+Applications are stored in the browser using localStorage. React state is used to manage the application data and update the dashboard whenever applications are added, edited, or deleted.
+
+The application list can be dynamically filtered based on application status and searched by company or position. Applications can also be sorted according to different criteria.
+
+The dashboard calculates application statistics from the stored application data and displays the distribution of applications by status using a bar chart.
+
+What I Learned
+
+Through this project, I practiced:
+
+Building reusable React components
+Managing state with React hooks
+Working with TypeScript interfaces and types
+Handling forms and user input
+Filtering and sorting arrays of objects
+Persisting data with localStorage
+Creating data visualizations with Recharts
+Designing responsive layouts with CSS
+Debugging React and TypeScript errors
+Using Git for incremental version control
+Deploying a web application
+Future Improvements
+
+Potential future versions could include:
+
+A backend database
+User authentication
+Cloud data synchronization
+Calendar integration
+Application reminders
+Additional analytics
+Project Development
+
+This project was developed incrementally using Git and GitHub, with separate commits for major functionality and design improvements.
+
+Key development milestones included:
+
+Initial dashboard and application form
+Application cards
+Edit and delete functionality
+Status filtering
+Dashboard status overview
+Application status chart
+Search and sorting
+Responsive styling and UI polish
