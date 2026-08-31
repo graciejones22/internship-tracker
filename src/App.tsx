@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import AddApplicationForm from './components/AddApplicationForm';
-import type { Application } from './types/Application';
+import type { 
+  Application,
+  ApplicationStatus,
+ } from './types/Application';
 import ApplicationCard from './components/ApplicationCard';
 
 function App() {
@@ -18,7 +21,10 @@ function App() {
   }, [applications]);
   const [showForm, setShowForm] = useState(false);
   const [editingApplication, setEditingApplication] =
-  useState<Application | null>(null);
+    useState<Application | null>(null);
+  const [filter, setFilter] = useState<ApplicationStatus | 'All'>(
+    'All'
+  );
 
   function handleAddApplication(application: Application) {
     setApplications((currentApplications) => [
@@ -54,6 +60,13 @@ function App() {
     setEditingApplication(null);
     setShowForm(false);
   }
+
+  const filteredApplications =
+    filter === 'All'
+      ? applications
+      : applications.filter(
+          (application) => application.status === filter
+        );
 
   return (
     <div className="app">
@@ -119,9 +132,32 @@ function App() {
             <div>
               <h2>My Applications</h2>
               <p>Your internship applications will appear here.</p>
-            </div>
           </div>
 
+          <div className="filter-buttons">
+            {[
+              'All',
+              'Interested',
+              'Applied',
+              'Interview',
+              'Offer',
+              'Rejected',
+            ].map((status) => (
+              <button
+                key={status}
+                type="button"
+                className={`filter-button ${
+                  filter === status ? 'active' : ''
+                }`}
+                onClick={() =>
+                  setFilter(status as ApplicationStatus | 'All')
+                }
+              >
+                {status}
+              </button>
+            ))}
+          </div>
+        </div>  
           {applications.length === 0 ? (
             <div className="empty-state">
               <h3>No applications yet</h3>
@@ -139,11 +175,11 @@ function App() {
             </div>
           ) : (
             <div className="application-list">
-              {applications.map((application) => (
+              {filteredApplications.map((application) => (
                 <ApplicationCard
                   key={application.id}
                   application={application}
-                 onDelete={handleDeleteApplication}
+                  onDelete={handleDeleteApplication}
                   onEdit={handleEditApplication}
                 />
           ))}
