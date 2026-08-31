@@ -508,6 +508,49 @@ button {
   color: white;
 }
 
+/* Application Overview */
+
+.status-overview {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.status-overview-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-overview-card span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.status-overview-card strong {
+  font-size: 26px;
+  color: #111827;
+}
+
+@media (max-width: 900px) {
+  .status-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 700px) {
   .section-heading {
     flex-direction: column;
@@ -526,6 +569,10 @@ button {
   .application-details {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
