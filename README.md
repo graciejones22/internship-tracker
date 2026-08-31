@@ -49,22 +49,22 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/graciejones22/internship-tracker.git
-
+```
 Navigate to the project directory:
-
+```bash
 cd internship-tracker
-
+```
 Install dependencies:
-
+```bash
 npm install
-
+```
 Start the development server:
-
+```bash
 npm run dev
-
+```
 Open the local development URL provided by Vite in your browser.
 
-How It Works
+### How It Works
 
 Applications are stored in the browser using localStorage. React state is used to manage the application data and update the dashboard whenever applications are added, edited, or deleted.
 
@@ -72,42 +72,49 @@ The application list can be dynamically filtered based on application status and
 
 The dashboard calculates application statistics from the stored application data and displays the distribution of applications by status using a bar chart.
 
-What I Learned
+### What I Learned
 
-Through this project, I practiced:
+## Through this project, I practiced:
 
-Building reusable React components
-Managing state with React hooks
-Working with TypeScript interfaces and types
-Handling forms and user input
-Filtering and sorting arrays of objects
-Persisting data with localStorage
-Creating data visualizations with Recharts
-Designing responsive layouts with CSS
-Debugging React and TypeScript errors
-Using Git for incremental version control
-Deploying a web application
-Future Improvements
+- Building reusable React components
+- Managing state with React hooks
+- Working with TypeScript interfaces and types
+- Handling forms and user input
+- Filtering and sorting arrays of objects
+- Persisting data with localStorage
+- Creating data visualizations with Recharts
+- Designing responsive layouts with CSS
+- Debugging React and TypeScript errors
+- Using Git for incremental version control
+- Deploying a web application
 
-Potential future versions could include:
+### Future Improvements
 
-A backend database
-User authentication
-Cloud data synchronization
-Calendar integration
-Application reminders
-Additional analytics
-Project Development
+## Potential future versions could include:
+
+- A backend database
+- User authentication
+- Cloud data synchronization
+- Calendar integration
+- Application reminders
+- Additional analytics
+- Project Development
 
 This project was developed incrementally using Git and GitHub, with separate commits for major functionality and design improvements.
 
-Key development milestones included:
+## Key development milestones included:
 
-Initial dashboard and application form
-Application cards
-Edit and delete functionality
-Status filtering
-Dashboard status overview
-Application status chart
-Search and sorting
-Responsive styling and UI polish
+- Initial dashboard and application form
+- Application cards
+- Edit and delete functionality
+- Status filtering
+- Dashboard status overview
+- Application status chart
+- Search and sorting
+- Responsive styling and UI polish
+
+### Author
+
+Grace Jones
+Computer Science (Software Development)
+Siena University
