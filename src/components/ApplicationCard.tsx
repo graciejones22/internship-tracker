@@ -3,11 +3,13 @@ import type { Application } from '../types/Application';
 interface ApplicationCardProps {
   application: Application;
   onDelete: (id: number) => void;
+  onEdit: (application: Application) => void;
 }
 
 function ApplicationCard({
   application,
   onDelete,
+  onEdit,
 }: ApplicationCardProps) {
   return (
     <div className="application-card">
@@ -57,6 +59,14 @@ function ApplicationCard({
             View Job
           </a>
         )}
+
+        <button
+         type="button"
+          className="edit-button"
+          onClick={() => onEdit(application)}
+        >
+          Edit
+        </button>
 
         <button
           type="button"

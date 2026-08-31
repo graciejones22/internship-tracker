@@ -17,6 +17,8 @@ function App() {
     );
   }, [applications]);
   const [showForm, setShowForm] = useState(false);
+  const [editingApplication, setEditingApplication] =
+  useState<Application | null>(null);
 
   function handleAddApplication(application: Application) {
     setApplications((currentApplications) => [
@@ -28,12 +30,30 @@ function App() {
   }
 
   function handleDeleteApplication(id: number) {
-  setApplications((currentApplications) =>
-    currentApplications.filter(
-      (application) => application.id !== id
+    setApplications((currentApplications) =>
+      currentApplications.filter(
+        (application) => application.id !== id
+      )
+  );
+  }
+
+  function handleEditApplication(application: Application) {
+    setEditingApplication(application);
+    setShowForm(true);
+  }
+
+  function handleUpdateApplication(updatedApplication: Application) {
+    setApplications((currentApplications) =>
+    currentApplications.map((application) =>
+      application.id === updatedApplication.id
+        ? updatedApplication
+        : application
     )
   );
-}
+
+    setEditingApplication(null);
+    setShowForm(false);
+  }
 
   return (
     <div className="app">
@@ -123,7 +143,8 @@ function App() {
                 <ApplicationCard
                   key={application.id}
                   application={application}
-                  onDelete={handleDeleteApplication}
+                 onDelete={handleDeleteApplication}
+                  onEdit={handleEditApplication}
                 />
           ))}
         </div>
@@ -133,10 +154,18 @@ function App() {
 
       {showForm && (
         <AddApplicationForm
-          onAddApplication={handleAddApplication}
-          onCancel={() => setShowForm(false)}
-        />
-      )}
+          onAddApplication={
+            editingApplication
+              ? handleUpdateApplication
+              : handleAddApplication
+        }
+        onCancel={() => {
+          setShowForm(false);
+          setEditingApplication(null);
+        }}
+        existingApplication={editingApplication ?? undefined}
+      />
+  )}
     </div>
   );
 }

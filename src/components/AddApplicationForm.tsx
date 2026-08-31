@@ -4,27 +4,51 @@ import type { Application, ApplicationStatus } from '../types/Application';
 interface AddApplicationFormProps {
   onAddApplication: (application: Application) => void;
   onCancel: () => void;
+  existingApplication?: Application;
 }
 
 function AddApplicationForm({
   onAddApplication,
   onCancel,
+    existingApplication,
 }: AddApplicationFormProps) {
-  const [company, setCompany] = useState('');
-  const [position, setPosition] = useState('');
-  const [location, setLocation] = useState('');
-  const [dateApplied, setDateApplied] = useState('');
-  const [deadline, setDeadline] = useState('');
-  const [status, setStatus] =
-    useState<ApplicationStatus>('Interested');
-  const [jobUrl, setJobUrl] = useState('');
-  const [notes, setNotes] = useState('');
+  const [company, setCompany] = useState(
+  existingApplication?.company ?? ''
+);
+
+const [position, setPosition] = useState(
+  existingApplication?.position ?? ''
+);
+
+const [location, setLocation] = useState(
+  existingApplication?.location ?? ''
+);
+
+const [dateApplied, setDateApplied] = useState(
+  existingApplication?.dateApplied ?? ''
+);
+
+const [deadline, setDeadline] = useState(
+  existingApplication?.deadline ?? ''
+);
+
+const [status, setStatus] = useState<ApplicationStatus>(
+  existingApplication?.status ?? 'Interested'
+);
+
+const [jobUrl, setJobUrl] = useState(
+  existingApplication?.jobUrl ?? ''
+);
+
+const [notes, setNotes] = useState(
+  existingApplication?.notes ?? ''
+);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const newApplication: Application = {
-      id: Date.now(),
+      id: existingApplication?.id ?? Date.now(),
       company,
       position,
       location,
@@ -43,7 +67,9 @@ function AddApplicationForm({
       <div className="application-form-container">
         <div className="form-header">
           <div>
-            <h2>Add Application</h2>
+            <h2>
+                {existingApplication ? 'Edit Application' : 'Add Application'}
+            </h2>
             <p>Enter the details for your internship application.</p>
           </div>
 
@@ -150,7 +176,7 @@ function AddApplicationForm({
             </button>
 
             <button type="submit" className="add-button">
-              Add Application
+              {existingApplication ? 'Save Changes' : 'Add Application'}
             </button>
           </div>
         </form>
