@@ -2,6 +2,10 @@
 
 A responsive web application for organizing and tracking internship applications throughout the recruiting process.
 
+## Live Demo
+
+[View the Internship Application Tracker](https://graciejones22.github.io/internship-tracker/)
+
 ## Overview
 
 The Internship Application Tracker was built to make it easier to keep track of internship opportunities in one place. Users can add applications, update their status, search and filter their applications, sort them by different criteria, and monitor their overall application progress through a dashboard.
