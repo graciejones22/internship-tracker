@@ -228,6 +228,8 @@ function App() {
             ))}
           </div>
         </div>  
+
+        
           {applications.length === 0 ? (
             <div className="empty-state">
               <h3>No applications yet</h3>

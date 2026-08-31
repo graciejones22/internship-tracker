@@ -47,13 +47,17 @@ function StatusChart({ statusCounts }: StatusChartProps) {
       <h2>Application Status</h2>
       <p>Overview of your internship applications.</p>
 
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={260}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="status" />
           <YAxis allowDecimals={false} />
           <Tooltip />
-          <Bar dataKey="applications" />
+          <Bar 
+          dataKey="applications"
+          radius={[6,6,0,0]}
+          fill="#FE5BAC"
+           />
         </BarChart>
       </ResponsiveContainer>
     </div>

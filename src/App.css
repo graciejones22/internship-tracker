@@ -19,12 +19,14 @@ button {
 
 .app {
   min-height: 100vh;
-  padding: 40px 60px;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 40px 60px;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 
 .header {
   display: flex;
@@ -45,13 +47,15 @@ button {
   font-size: 16px;
 }
 
-/* Buttons */
+/* =========================
+   Buttons
+========================= */
 
 .add-button {
   border: none;
   border-radius: 10px;
   padding: 12px 20px;
-  background: #4f46e5;
+  background: #fe5bac;
   color: white;
   font-size: 15px;
   font-weight: 600;
@@ -61,10 +65,12 @@ button {
 
 .add-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 6px 15px rgba(254, 91, 172, 0.3);
 }
 
-/* Statistics */
+/* =========================
+   Statistics
+========================= */
 
 .stats {
   display: grid;
@@ -94,15 +100,49 @@ button {
   color: #111827;
 }
 
-/* Applications */
+/* =========================
+   Status Chart
+========================= */
+
+.status-chart {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.status-chart h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  color: #111827;
+  text-align: center;
+}
+
+.status-chart > p {
+  margin: 0 0 20px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* =========================
+   Applications Section
+========================= */
 
 .applications-section {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
-  min-height: 400px;
   padding: 30px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.applications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 .section-heading h2 {
@@ -116,7 +156,259 @@ button {
   color: #6b7280;
 }
 
-/* Empty state */
+/* =========================
+   Search / Sort / Filters
+========================= */
+
+.application-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-container {
+  margin: 0;
+}
+
+.search-input {
+  width: 300px;
+  padding: 11px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  background: white;
+}
+
+.search-input:focus {
+  outline: 2px solid #fe5bac;
+  border-color: transparent;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  white-space: nowrap;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.sort-container select {
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  color: #374151;
+  font: inherit;
+}
+
+.sort-container select:focus {
+  outline: 2px solid #fe5bac;
+  border-color: transparent;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.filter-button {
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #6b7280;
+  border-radius: 20px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+  background: #fff0f7;
+  border-color: #fe5bac;
+  color: #fe5bac;
+}
+
+.filter-button.active {
+  background: #fe5bac;
+  border-color: #fe5bac;
+  color: white;
+}
+
+/* =========================
+   Application List
+========================= */
+
+.application-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.application-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  background: white;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  text-align: left;
+}
+
+.application-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.application-card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.application-card-main > div:first-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.application-card h3 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-size: 18px;
+}
+
+.application-position {
+  margin: 0 0 6px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.application-location {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.application-details {
+  display: flex;
+  gap: 40px;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.application-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.detail-label {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* =========================
+   Status Badges
+========================= */
+
+.status-badge {
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-interested {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.status-applied {
+  background: #ffe8f3;
+  color: #d93682;
+}
+
+.status-interview {
+  background: #fff3d6;
+  color: #92400e;
+}
+
+.status-offer {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =========================
+   Application Actions
+========================= */
+
+.application-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.view-job-button,
+.edit-button,
+.delete-button {
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-job-button {
+  background: #fe5bac;
+  color: white;
+}
+
+.view-job-button:hover {
+  background: #f34e9f;
+}
+
+.edit-button {
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+}
+
+.delete-button {
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #dc2626;
+}
+
+.edit-button:hover {
+  background: #fff0f7;
+  border-color: #fe5bac;
+  color: #fe5bac;
+}
+
+.delete-button:hover {
+  background: #fef2f2;
+}
+
+/* =========================
+   Empty State
+========================= */
 
 .empty-state {
   text-align: center;
@@ -136,43 +428,9 @@ button {
   color: #6b7280;
 }
 
-/* Mobile */
-
-@media (max-width: 800px) {
-  .app {
-    padding: 25px 20px;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .header h1 {
-    font-size: 30px;
-  }
-
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .applications-section {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 500px) {
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .header .add-button {
-    width: 100%;
-  }
-}
-
-/* Application Form */
+/* =========================
+   Application Form
+========================= */
 
 .form-overlay {
   position: fixed;
@@ -221,6 +479,10 @@ button {
   cursor: pointer;
 }
 
+.close-button:hover {
+  color: #fe5bac;
+}
+
 .application-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -255,7 +517,7 @@ button {
 .application-form input:focus,
 .application-form select:focus,
 .application-form textarea:focus {
-  outline: 2px solid #4f46e5;
+  outline: 2px solid #fe5bac;
   border-color: transparent;
 }
 
@@ -280,49 +542,109 @@ button {
   cursor: pointer;
 }
 
-/* Application Cards */
-
-.application-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 30px;
+.cancel-button:hover {
+  border-color: #fe5bac;
+  color: #fe5bac;
 }
 
-.application-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 1000px) {
+  .app {
+    padding: 35px 30px;
+  }
+
+  .applications-header {
+    flex-direction: column;
+  }
+
+  .application-controls {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-container {
+    flex: 1;
+  }
 }
 
-.application-card h3 {
-  margin: 0 0 5px;
-  color: #111827;
-}
+@media (max-width: 800px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.application-card p {
-  margin: 0 0 5px;
-  font-weight: 600;
-}
+  .application-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-.application-card span {
-  color: #6b7280;
-  font-size: 14px;
-}
+  .sort-container {
+    width: 100%;
+  }
 
-.application-status {
-  background: #eef2ff;
-  color: #4338ca;
-  border-radius: 20px;
-  padding: 7px 14px;
-  font-size: 13px;
-  font-weight: 600;
+  .sort-container select {
+    flex: 1;
+  }
+
+  .filter-buttons {
+    margin-top: 18px;
+  }
 }
 
 @media (max-width: 600px) {
+  .app {
+    padding: 25px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .header .add-button {
+    width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .applications-section,
+  .status-chart {
+    padding: 20px;
+  }
+
+  .application-card-main {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .application-details {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .application-actions {
+    flex-wrap: wrap;
+  }
+
+  .view-job-button,
+  .edit-button,
+  .delete-button {
+    flex: 1;
+    text-align: center;
+  }
+
   .application-form {
     grid-template-columns: 1fr;
   }
@@ -334,309 +656,4 @@ button {
   .application-form-container {
     padding: 20px;
   }
-
-  .application-card {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 15px;
-  }
 }
-
-/* Improved Application Cards */
-
-.application-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px;
-  background: white;
-}
-
-.application-card-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.application-card h3 {
-  margin: 0 0 5px;
-  color: #111827;
-  font-size: 18px;
-}
-
-.application-position {
-  margin: 0 0 6px;
-  font-weight: 600;
-}
-
-.application-location {
-  margin: 0;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-.status-badge {
-  border-radius: 20px;
-  padding: 7px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.status-interested {
-  background: #f3f4f6;
-  color: #4b5563;
-}
-
-.status-applied {
-  background: #eef2ff;
-  color: #4338ca;
-}
-
-.status-interview {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.status-offer {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.status-rejected {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.application-details {
-  display: flex;
-  gap: 40px;
-  margin-top: 18px;
-  padding-top: 15px;
-  border-top: 1px solid #f3f4f6;
-}
-
-.application-details div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 14px;
-}
-
-.detail-label {
-  color: #6b7280;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.application-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.view-job-button,
-.delete-button {
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.view-job-button {
-  background: #4f46e5;
-  color: white;
-}
-
-.delete-button {
-  border: 1px solid #e5e7eb;
-  background: white;
-  color: #dc2626;
-}
-
-.edit-button {
-  border: 1px solid #d1d5db;
-  background: white;
-  color: #374151;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.edit-button:hover {
-  background: #f9fafb;
-}
-
-/* Application Filters */
-
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.filter-button {
-  border: 1px solid #e5e7eb;
-  background: white;
-  color: #6b7280;
-  border-radius: 20px;
-  padding: 7px 13px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.filter-button:hover {
-  background: #f9fafb;
-}
-
-.filter-button.active {
-  background: #4f46e5;
-  border-color: #4f46e5;
-  color: white;
-}
-
-/* Application Overview */
-
-.status-overview {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-}
-
-.status-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.status-overview-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.status-overview-card span {
-  color: #6b7280;
-  font-size: 13px;
-}
-
-.status-overview-card strong {
-  font-size: 26px;
-  color: #111827;
-}
-
-/* Status Chart */
-
-.status-chart {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-}
-
-.status-chart h2 {
-  margin: 0 0 6px;
-  font-size: 24px;
-  color: #111827;
-}
-
-.status-chart > p {
-  margin: 0 0 20px;
-  color: #6b7280;
-}
-
-/* Search */
-
-.search-container {
-  margin-top: 20px;
-  margin-bottom: 12px;
-}
-
-.search-input {
-  width: 100%;
-  max-width: 400px;
-  padding: 11px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #1f2937;
-}
-
-.search-input:focus {
-  outline: 2px solid #4f46e5;
-  border-color: transparent;
-}
-
-/* Sorting */
-
-.sort-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-.sort-container select {
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  background: white;
-  color: #374151;
-  font: inherit;
-}
-
-@media (max-width: 900px) {
-  .status-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .section-heading {
-    flex-direction: column;
-  }
-
-  .filter-buttons {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .application-card-main {
-    flex-direction: column;
-  }
-
-  .application-details {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .status-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
