@@ -178,7 +178,9 @@ function App() {
               <h2>My Applications</h2>
               <p>Your internship applications will appear here.</p>
           </div>
-          
+                  <br></br>
+          <div className="application-controls">
+
           <div className="search-container">
             <input
               type="text"
@@ -188,7 +190,7 @@ function App() {
               onChange={(event) => setSearchTerm(event.target.value)}
               />
           </div>
-
+        
           <div className="sort-container">
             <label htmlFor="sort">Sort by:</label>
 
@@ -226,6 +228,7 @@ function App() {
                 {status}
               </button>
             ))}
+            </div>
           </div>
         </div>  
 
