@@ -1,45 +1,59 @@
 # Internship Application Tracker
 
-A responsive web application for organizing and tracking internship applications throughout the recruiting process.
+A responsive web application designed to help students organize, manage, and track internship applications throughout the recruiting process.
 
-## Live Demo
+[**Live Demo**](https://graciejones22.github.io/internship-tracker/) · [**GitHub Repository**](https://github.com/graciejones22/internship-tracker)
 
-[View the Internship Application Tracker](https://graciejones22.github.io/internship-tracker/)
+![Internship Tracker Dashboard](./screenshots/dashboard.png)
 
-## Overview
+## Tech Stack
 
-The Internship Application Tracker was built to make it easier to keep track of internship opportunities in one place. Users can add applications, update their status, search and filter their applications, sort them by different criteria, and monitor their overall application progress through a dashboard.
+**React** · **TypeScript** · **Vite** · **Recharts** · **CSS** · **LocalStorage**
 
-The application stores data locally in the browser so that application information remains available after refreshing the page.
+## Key Features
 
-## Features
+- **Application Management** — Create, edit, and delete internship applications
+- **Search** — Quickly find applications by company or position
+- **Filtering** — Filter applications by application status
+- **Sorting** — Organize applications based on relevant application details
+- **Status Dashboard** — View application progress and status distribution
+- **Deadline Tracking** — Keep track of upcoming application deadlines
+- **Responsive Design** — Optimized for both desktop and mobile devices
+- **Persistent Data** — Application information is saved using browser localStorage
 
-- Add internship applications
-- Edit existing applications
-- Delete applications
-- Track application status
-- Search applications by company or position
-- Filter applications by status
-- Sort applications by:
-  - Newest application
-  - Oldest application
-  - Company name
-  - Deadline
-- Store job posting links
-- Dashboard statistics
-- Application status visualization
-- Persistent data using browser localStorage
-- Responsive design for desktop and mobile devices
+## About the Project
 
-## Technologies
+I built this application to solve a problem I was experiencing while applying for internships: keeping track of applications, deadlines, and progress across multiple companies.
 
-- React
-- TypeScript
-- Vite
-- Recharts
-- CSS
-- localStorage
-- Git & GitHub
+The project gave me hands-on experience building an interactive React application, managing state with TypeScript, creating reusable components, working with data visualization, and designing a responsive user interface.
+
+## Technical Highlights
+
+- Built reusable React components using TypeScript
+- Implemented full CRUD functionality for internship applications
+- Managed application state and dynamically updated the user interface
+- Implemented search, filtering, and sorting functionality
+- Created data visualizations using Recharts
+- Implemented persistent client-side storage with localStorage
+- Designed responsive layouts using CSS
+- Configured and deployed the application using Vite and GitHub Pages
+
+## Project Structure
+
+```text
+internship-tracker/
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── ...
+├── screenshots/
+│   └── internship-tracker-dashboard.png
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 
 ## Getting Started
 
@@ -105,17 +119,6 @@ The dashboard calculates application statistics from the stored application data
 - Project Development
 
 This project was developed incrementally using Git and GitHub, with separate commits for major functionality and design improvements.
-
-### Key development milestones included:
-
-- Initial dashboard and application form
-- Application cards
-- Edit and delete functionality
-- Status filtering
-- Dashboard status overview
-- Application status chart
-- Search and sorting
-- Responsive styling and UI polish
 
 ### Author
 
