@@ -54,6 +54,7 @@ internship-tracker/
 ├── tsconfig.json
 ├── vite.config.ts
 └── README.md
+```
 
 ## Getting Started
 
